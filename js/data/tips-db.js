@@ -1,0 +1,67 @@
+/* ============================================================
+   KellyFit Padrao 2026 — Tips Database (50 dicas)
+   ============================================================ */
+const TipsDB = {
+  tips: [
+    { id: 't001', category: 'nutricao', icon: '&#127869;', text: 'Coma proteina em todas as refeicoes. Ajuda na saciedade e preserva massa muscular.' },
+    { id: 't002', category: 'agua', icon: '&#128167;', text: 'Beba um copo de agua assim que acordar. Reidrata o corpo e ativa o metabolismo.' },
+    { id: 't003', category: 'exercicio', icon: '&#127939;', text: 'Caminhar 30 minutos por dia ja traz beneficios comprovados para saude cardiovascular.' },
+    { id: 't004', category: 'sono', icon: '&#128164;', text: 'Dormir menos de 7 horas aumenta o hormonio da fome (grelina) em ate 24%.' },
+    { id: 't005', category: 'nutricao', icon: '&#129377;', text: 'Consuma pelo menos 5 porcoes de vegetais e frutas por dia para micronutrientes essenciais.' },
+    { id: 't006', category: 'nutricao', icon: '&#127869;', text: 'Mastigue devagar. Leva 20 minutos para o cerebro receber o sinal de saciedade do estomago.' },
+    { id: 't007', category: 'exercicio', icon: '&#127947;', text: 'Progressao de carga e essencial para hipertrofia. Anote seus pesos e tente superar semanalmente.' },
+    { id: 't008', category: 'agua', icon: '&#128167;', text: 'Urina amarela escura = desidratado. Urina clara = bem hidratado. Use como guia.' },
+    { id: 't009', category: 'mental', icon: '&#129504;', text: 'Estresse cronicamente elevado aumenta cortisol, dificultando a perda de gordura abdominal.' },
+    { id: 't010', category: 'nutricao', icon: '&#129371;', text: 'Para emagrecimento, mire em 1.6-2.2g de proteina por kg de peso corporal por dia.' },
+    { id: 't011', category: 'exercicio', icon: '&#9889;', text: 'HIIT de 20 minutos pode queimar mais gordura que 40 minutos de cardio moderado.' },
+    { id: 't012', category: 'nutricao', icon: '&#127823;', text: 'Fibras alimentares alimentam as bacterias boas do intestino e melhoram a imunidade.' },
+    { id: 't013', category: 'sono', icon: '&#9196;', text: 'Evite telas 1 hora antes de dormir. A luz azul suprime a melatonina e prejudica o sono.' },
+    { id: 't014', category: 'exercicio', icon: '&#128170;', text: 'Muscle memory: pessoas que ja treinaram recuperam massa muscular muito mais rapido.' },
+    { id: 't015', category: 'nutricao', icon: '&#127861;', text: 'Cafe da manha proteico aumenta a saciedade durante o dia inteiro, segundo estudos.' },
+    { id: 't016', category: 'agua', icon: '&#128167;', text: 'Beba 500ml de agua 30 minutos antes das refeicoes para reduzir ingestao calorica.' },
+    { id: 't017', category: 'nutricao', icon: '&#129361;', text: 'Gorduras boas (abacate, azeite, oleaginosas) sao essenciais para saude hormonal.' },
+    { id: 't018', category: 'exercicio', icon: '&#127947;', text: 'Descanse os musculos. O crescimento muscular acontece durante o repouso, nao no treino.' },
+    { id: 't019', category: 'mental', icon: '&#10084;', text: 'Autocompaixao e mais eficaz que autocritica. Erros fazem parte do processo.' },
+    { id: 't020', category: 'nutricao', icon: '&#129378;', text: 'Acucar refinado provoca picos de insulina que levam a mais fome 2-3 horas depois.' },
+    { id: 't021', category: 'exercicio', icon: '&#127939;', text: 'Caminhar apos as refeicoes reduz o pico de glicose no sangue em ate 30%.' },
+    { id: 't022', category: 'nutricao', icon: '&#127829;', text: 'Alimentos integrais tem mais fibras, vitaminas e minerais que seus versoes processados.' },
+    { id: 't023', category: 'sono', icon: '&#128164;', text: 'Temperatura ideal para dormir: 18-20°C. Ambientes quentes prejudicam a qualidade do sono.' },
+    { id: 't024', category: 'nutricao', icon: '&#127809;', text: 'Prato ideal: 50% vegetais, 25% proteina, 25% carboidrato complexo e gordura boa.' },
+    { id: 't025', category: 'exercicio', icon: '&#129506;', text: 'Alongamento apos o treino reduz DOMS (dor muscular tardia) e melhora mobilidade.' },
+    { id: 't026', category: 'mental', icon: '&#127775;', text: 'Celebre pequenas vitorias. Cada habito construido e uma conquista real.' },
+    { id: 't027', category: 'nutricao', icon: '&#129371;', text: 'Ovo e um dos alimentos mais completos: proteina de alta qualidade, vitaminas e colina.' },
+    { id: 't028', category: 'agua', icon: '&#128167;', text: 'Temperatura quente aumenta a necessidade hidrica. Beba 500ml a mais por hora de exercicio.' },
+    { id: 't029', category: 'exercicio', icon: '&#127942;', text: 'Consistencia bate intensidade. Treinar 3x por semana todo mes supera treinar 7x por 2 semanas.' },
+    { id: 't030', category: 'nutricao', icon: '&#127807;', text: 'Veganos precisam suplementar B12, D3, omega-3 e iodo. Planeje com atencao.' },
+    { id: 't031', category: 'mental', icon: '&#127775;', text: 'Defina seu "porque". Quem tem motivacao intrinseca persiste muito mais.' },
+    { id: 't032', category: 'nutricao', icon: '&#127823;', text: 'Frutas sao saudaveis! O acucar da fruta vem junto com fibra, que diminui o pico de insulina.' },
+    { id: 't033', category: 'exercicio', icon: '&#127947;', text: 'Multiarticulares (agachamento, terra, supino) ativam mais musculos e queimam mais calorias.' },
+    { id: 't034', category: 'sono', icon: '&#9196;', text: 'Cafeina tem meia vida de 5-6h. Um cafe as 16h ainda impacta o sono as 22h.' },
+    { id: 't035', category: 'nutricao', icon: '&#129384;', text: 'Probioticos (iogurte, kefir, kimchi) melhoram a microbiota intestinal e saude imune.' },
+    { id: 't036', category: 'agua', icon: '&#128167;', text: 'Cha verde sem acucar conta como hidratacao e tem antioxidantes extras.' },
+    { id: 't037', category: 'exercicio', icon: '&#9889;', text: 'O apos queima (EPOC) do HIIT faz voce queimar calorias por ate 24h apos o treino.' },
+    { id: 't038', category: 'mental', icon: '&#129504;', text: 'Mindful eating: coma sem distracao. Sem celular, sem TV. Aprecie cada garfada.' },
+    { id: 't039', category: 'nutricao', icon: '&#127849;', text: 'Cacau puro (> 70% cacao) tem flavonoides que beneficiam o coração e o humor.' },
+    { id: 't040', category: 'exercicio', icon: '&#128170;', text: 'A zona de frequencia cardiaca para queima de gordura e 60-70% da FC maxima.' },
+    { id: 't041', category: 'nutricao', icon: '&#127855;', text: 'Pao de fermentacao natural (sourdough) tem menos impacto glicemico que pao industrializado.' },
+    { id: 't042', category: 'sono', icon: '&#128164;', text: 'Rotina de sono: dormir e acordar sempre no mesmo horario, mesmo no fim de semana.' },
+    { id: 't043', category: 'exercicio', icon: '&#127939;', text: 'Use as escadas. Subir 10 lances queima cerca de 100kcal e fortalece pernas e gluteos.' },
+    { id: 't044', category: 'nutricao', icon: '&#129379;', text: 'Leguminosas (feijao, lentilha, grao-de-bico) sao fontes baratas e excelentes de proteina vegetal.' },
+    { id: 't045', category: 'mental', icon: '&#10084;', text: 'Gratidao diaria reduz cortisol e aumenta sensacao de bem-estar. Escreva 3 coisas boas por dia.' },
+    { id: 't046', category: 'nutricao', icon: '&#127807;', text: 'Pimenta cayenne acelera levemente o metabolismo e reduz o apetite temporariamente.' },
+    { id: 't047', category: 'exercicio', icon: '&#127947;', text: 'Treino em jejum pode aumentar a oxidacao de gordura, mas pode reduzir performance de forca.' },
+    { id: 't048', category: 'agua', icon: '&#128167;', text: 'Alcool e diuretico. Para cada drinque, beba um copo de agua extra para compensar.' },
+    { id: 't049', category: 'nutricao', icon: '&#129421;', text: 'Omega-3 (salmao, sardinha, chia) reduz inflamacao e melhora saude cardiovascular.' },
+    { id: 't050', category: 'mental', icon: '&#127775;', text: 'Progresso nao e linear. Platos sao normais. Continue e os resultados viraõ.' }
+  ],
+
+  getAll() { return this.tips; },
+  getById(id) { return this.tips.find(t => t.id === id) || null; },
+  getByCategory(cat) { return this.tips.filter(t => t.category === cat); },
+  getRandom() { return this.tips[Math.floor(Math.random() * this.tips.length)]; },
+  getDailyTip() {
+    const dayOfYear = Math.floor((Date.now() - new Date(new Date().getFullYear(), 0, 0)) / 86400000);
+    return this.tips[dayOfYear % this.tips.length];
+  },
+  getTotalCount() { return this.tips.length; }
+};

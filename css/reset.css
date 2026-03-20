@@ -1,0 +1,38 @@
+/* ============================================================
+   KellyFit Padrao 2026 — CSS Reset
+   ============================================================ */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
+body {
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background var(--tr-base), color var(--tr-base);
+}
+a { text-decoration: none; color: inherit; }
+ul, ol { list-style: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; border: none; outline: none; font-family: inherit; background: none; }
+input, select, textarea { font-family: inherit; outline: none; }
+h1, h2, h3, h4, h5 { font-family: var(--font-heading); font-weight: 800; line-height: 1.2; }
+h1 { font-size: clamp(2rem, 5vw, var(--text-5xl)); }
+h2 { font-size: clamp(1.75rem, 4vw, var(--text-4xl)); }
+h3 { font-size: clamp(1.25rem, 3vw, var(--text-2xl)); }
+h4 { font-size: var(--text-lg); }
+
+/* Utility */
+.container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--section-px); }
+.section-py { padding-top: var(--section-py); padding-bottom: var(--section-py); }
+.text-center { text-align: center; }
+.hidden { display: none !important; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); border: 0; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--gray-600); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gray-500); }

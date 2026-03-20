@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KellyFit Padrao 2026 — App de nutricao e fitness superior. 120+ refeicoes com receitas, gamificacao, PWA, tracking completo. 7 dias gratis.">
+  <meta name="theme-color" content="#10B981">
+  <title>KellyFit Padrao 2026 — Transforme Seu Corpo</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+<!-- ======== NAVBAR ======== -->
+<nav class="navbar" id="navbar" role="navigation" aria-label="Navegacao principal">
+  <div class="navbar-inner">
+    <a href="index.html" class="logo" aria-label="KellyFit Home">
+      <div class="logo-icon" aria-hidden="true">&#127807;</div>
+      <div class="logo-text">Kelly<span>Fit</span></div>
+    </a>
+    <ul class="nav-links" role="list">
+      <li><a href="#features">Funcionalidades</a></li>
+      <li><a href="#comparativo">Comparativo</a></li>
+      <li><a href="#preco">Preco</a></li>
+      <li><a href="#depoimentos">Depoimentos</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="theme-toggle btn-ghost btn-icon" aria-label="Alternar tema" title="Alternar tema claro/escuro">
+        <span class="theme-icon-light" aria-hidden="true">&#9728;</span>
+        <span class="theme-icon-dark" aria-hidden="true">&#9790;</span>
+      </button>
+      <button class="btn btn-outline btn-sm" id="btn-login" aria-label="Fazer login">Login</button>
+      <button class="btn btn-primary btn-sm" id="btn-register" aria-label="Comecar gratis">Comecar Gratis</button>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<nav class="mobile-nav" id="mobile-nav" aria-label="Menu mobile">
+  <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Fechar menu">&#10005;</button>
+  <a href="#features" class="mobile-nav-link">Funcionalidades</a>
+  <a href="#comparativo" class="mobile-nav-link">Comparativo</a>
+  <a href="#preco" class="mobile-nav-link">Preco</a>
+  <a href="#depoimentos" class="mobile-nav-link">Depoimentos</a>
+  <button class="btn btn-primary btn-lg mobile-nav-cta" id="mobile-btn-register">Comecar Gratis</button>
+</nav>
+
+<!-- ======== HERO ======== -->
+<section class="hero" role="banner">
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge reveal">
+        <span>&#11088;</span> App #1 de Nutricao e Fitness 2026
+      </div>
+      <h1 class="hero-title reveal">
+        Transforme Seu<br>
+        Corpo com <span class="highlight">Ciencia</span><br>
+        e Precisao
+      </h1>
+      <p class="hero-desc reveal">
+        O app de nutricao e fitness mais completo do Brasil. 120+ refeicoes com receitas, gamificacao, planejamento semanal, analise de progresso e muito mais. Tudo em um so lugar.
+      </p>
+      <div class="hero-cta reveal">
+        <button class="btn btn-primary btn-lg" id="hero-btn-register" aria-label="Comecar 7 dias gratis">
+          <span>&#127807;</span> Comecar 7 Dias Gratis
+        </button>
+        <button class="btn btn-ghost" id="hero-btn-login">
+          Ja tenho conta
+        </button>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="hero-stat-item">
+          <span class="hero-stat-value">120+</span>
+          <span class="hero-stat-label">Refeicoes</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-value">60+</span>
+          <span class="hero-stat-label">Exercicios</span>
+        </div>
+        <div class="hero-stat-item">
+          <span class="hero-stat-value">30</span>
+          <span class="hero-stat-label">Conquistas</span>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hero-app-preview">
+        <div class="preview-header">
+          <div class="preview-header-title">&#127807; Bom dia, Dilson!</div>
+          <div class="preview-header-sub">Meta: 1.850 kcal &#183; 7 dias gratis restantes</div>
+        </div>
+        <div class="preview-body">
+          <div class="preview-meal-card">
+            <div class="preview-meal-icon">&#127859;</div>
+            <div class="preview-meal-info">
+              <div class="preview-meal-name">Omelete de Espinafre</div>
+              <div class="preview-meal-kcal">320 kcal &#183; Cafe da manha</div>
+              <div class="preview-macros">
+                <span class="preview-macro-chip">P: 22g</span>
+                <span class="preview-macro-chip">C: 8g</span>
+                <span class="preview-macro-chip">G: 18g</span>
+              </div>
+            </div>
+          </div>
+          <div class="preview-meal-card">
+            <div class="preview-meal-icon">&#127823;</div>
+            <div class="preview-meal-info">
+              <div class="preview-meal-name">Bowl de Frango Grelhado</div>
+              <div class="preview-meal-kcal">480 kcal &#183; Almoco</div>
+              <div class="preview-macros">
+                <span class="preview-macro-chip">P: 42g</span>
+                <span class="preview-macro-chip">C: 38g</span>
+                <span class="preview-macro-chip">G: 12g</span>
+              </div>
+            </div>
+          </div>
+          <div class="preview-water">
+            <span style="font-size:1.4rem">&#128167;</span>
+            <div class="preview-water-circles">
+              <div class="water-circle filled"></div>
+              <div class="water-circle filled"></div>
+              <div class="water-circle filled"></div>
+              <div class="water-circle filled"></div>
+              <div class="water-circle filled"></div>
+              <div class="water-circle"></div>
+              <div class="water-circle"></div>
+              <div class="water-circle"></div>
+            </div>
+            <span class="preview-water-label">1.5 / 2.5L</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======== FEATURES ======== -->
+<section class="features-section" id="features">
+  <div class="section-header container reveal">
+    <span class="section-tag">Funcionalidades</span>
+    <h2 class="section-title">Tudo que Voce Precisa</h2>
+    <p class="section-desc">Um ecosistema completo para transformar seu corpo e sua saude, de forma cientifica e motivadora.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-card reveal" style="animation-delay:0.1s">
+      <div class="feature-icon">&#127869;</div>
+      <h3>120+ Refeicoes com Receitas</h3>
+      <p>Banco de dados com 120 refeicoes categorizado por objetivo, com instrucoes passo a passo, porcoes ajustaveis e valores nutricionais precisos.</p>
+    </div>
+    <div class="feature-card reveal" style="animation-delay:0.15s">
+      <div class="feature-icon blue">&#127919;</div>
+      <h3>Planejador Semanal Inteligente</h3>
+      <p>Monte seu cardapio da semana completo. Troque refeicoes com um clique, gere lista de compras automatica e mantenha variedade todos os dias.</p>
+    </div>
+    <div class="feature-card reveal" style="animation-delay:0.2s">
+      <div class="feature-icon orange">&#128293;</div>
+      <h3>Gamificacao Completa</h3>
+      <p>Sistema de XP, 15 niveis, 30 conquistas (badges), streaks com multiplicador e ranking semanal. Transforme sua jornada em uma missao epica.</p>
+    </div>
+    <div class="feature-card reveal" style="animation-delay:0.25s">
+      <div class="feature-icon purple">&#128200;</div>
+      <h3>Analytics e Predicoes</h3>
+      <p>Graficos SVG interativos com tooltips, tendencias de progresso, predicao de peso futuro com base nos seus dados reais e insights personalizados.</p>
+    </div>
+    <div class="feature-card reveal" style="animation-delay:0.3s">
+      <div class="feature-icon blue">&#128167;</div>
+      <h3>Tracking de Agua Visual</h3>
+      <p>Meta hidrica personalizada (35ml/kg), tracking por copos com animacao, lembretes inteligentes e estatisticas semanais de hidratacao.</p>
+    </div>
+    <div class="feature-card reveal" style="animation-delay:0.35s">
+      <div class="feature-icon">&#127939;</div>
+      <h3>60+ Exercicios com MET</h3>
+      <p>Biblioteca com 60+ exercicios organizados por grupo muscular. Calcule calorias gastas com precisao usando valores MET cientificos.</p>
+    </div>
+    <div class="feature-card reveal" style="animation-delay:0.4s">
+      <div class="feature-icon red">&#128241;</div>
+      <h3>PWA — Instale no Celular</h3>
+      <p>Funciona offline, pode ser instalado no celular como app nativo. Sem precisar de App Store ou Google Play. 100% gratuito e privado.</p>
+    </div>
+    <div class="feature-card reveal" style="animation-delay:0.45s">
+      <div class="feature-icon orange">&#9989;</div>
+      <h3>Habitos Diarios</h3>
+      <p>5+ habitos saudaveis com visual de calendario ao estilo GitHub. Construa consistencia com streaks e celebre cada dia de conquista.</p>
+    </div>
+    <div class="feature-card reveal" style="animation-delay:0.5s">
+      <div class="feature-icon purple">&#127973;</div>
+      <h3>IMC e Composicao Corporal</h3>
+      <p>Calculadora completa de IMC, percentual de gordura, massa magra, peso ideal (formula Hamwi) e classificacoes clinicas com orientacoes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ======== COMPARATIVO ======== -->
+<section class="comparison-section" id="comparativo">
+  <div class="section-header reveal" style="padding:0 24px">
+    <span class="section-tag">Comparativo</span>
+    <h2 class="section-title">Por que KellyFit e Superior</h2>
+    <p class="section-desc">Compare com outras solucoes do mercado e veja a diferenca.</p>
+  </div>
+  <div class="comparison-table">
+    <table class="compare-table" aria-label="Comparativo de funcionalidades">
+      <thead>
+        <tr>
+          <th style="text-align:left">Funcionalidade</th>
+          <th>Outros Apps</th>
+          <th class="kelly">KellyFit 2026</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Banco de refeicoes</td><td>32 refeicoes</td><td class="check">120+ com receitas</td></tr>
+        <tr><td>Quiz de anamnese</td><td>11 perguntas</td><td class="check">20 adaptativas</td></tr>
+        <tr><td>Tracking de agua</td><td class="cross">&#10006;</td><td class="check">&#10003; Visual interativo</td></tr>
+        <tr><td>Exercicios com MET</td><td class="cross">&#10006;</td><td class="check">&#10003; 60+ exercicios</td></tr>
+        <tr><td>Gamificacao</td><td class="cross">&#10006;</td><td class="check">&#10003; XP, niveis, badges, streaks</td></tr>
+        <tr><td>PWA / Offline</td><td class="cross">&#10006;</td><td class="check">&#10003; Instalavel no celular</td></tr>
+        <tr><td>Tema claro/escuro</td><td class="cross">&#10006;</td><td class="check">&#10003; Toggle instantaneo</td></tr>
+        <tr><td>Planejamento semanal</td><td class="cross">&#10006;</td><td class="check">&#10003; Com troca de refeicoes</td></tr>
+        <tr><td>Lista de compras</td><td class="cross">&#10006;</td><td class="check">&#10003; Auto-gerada</td></tr>
+        <tr><td>Graficos</td><td>Canvas basico</td><td class="check">SVG interativo + tooltips</td></tr>
+        <tr><td>Analytics / predicoes</td><td class="cross">&#10006;</td><td class="check">&#10003; Tendencias + predicao</td></tr>
+        <tr><td>Habitos diarios</td><td class="cross">&#10006;</td><td class="check">&#10003; Visual GitHub</td></tr>
+        <tr><td>IMC completo</td><td class="cross">&#10006;</td><td class="check">&#10003; + composicao corporal</td></tr>
+        <tr><td>Porcoes ajustaveis</td><td class="cross">&#10006;</td><td class="check">&#10003; 0.5x a 2x</td></tr>
+        <tr><td>Seguranca do trial</td><td>Bypass trivial</td><td class="check">HMAC + fingerprint</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ======== PRECO ======== -->
+<section class="pricing-section" id="preco">
+  <div class="section-header reveal" style="padding:0 24px">
+    <span class="section-tag">Preco</span>
+    <h2 class="section-title">Comece Gratuitamente</h2>
+    <p class="section-desc">7 dias de acesso completo, sem cartao de credito.</p>
+  </div>
+  <div class="pricing-card reveal" style="margin:0 auto;max-width:480px;padding:48px 40px">
+    <div class="pricing-badge-top">Mais Popular</div>
+    <div class="pricing-price">R$0</div>
+    <div class="pricing-period">7 dias de trial completo &bull; Sem cartao</div>
+    <ul class="pricing-features">
+      <li><span>&#10003;</span> 120+ refeicoes com receitas completas</li>
+      <li><span>&#10003;</span> Quiz personalizado de 20 perguntas</li>
+      <li><span>&#10003;</span> Plano alimentar calculado cientificamente</li>
+      <li><span>&#10003;</span> Tracking de agua, exercicios e habitos</li>
+      <li><span>&#10003;</span> Graficos de progresso interativos</li>
+      <li><span>&#10003;</span> Gamificacao: XP, niveis e 30 badges</li>
+      <li><span>&#10003;</span> Lista de compras automatica</li>
+      <li><span>&#10003;</span> Funciona offline (PWA)</li>
+      <li><span>&#10003;</span> Tema claro e escuro</li>
+    </ul>
+    <button class="btn btn-primary btn-lg btn-block" id="pricing-btn-register" aria-label="Comecar trial gratis">
+      Comecar Trial Gratis &#8594;
+    </button>
+    <p class="pricing-disclaimer">Sem compromisso. Seus dados ficam no seu dispositivo.</p>
+  </div>
+</section>
+
+<!-- ======== DEPOIMENTOS ======== -->
+<section class="testimonials-section" id="depoimentos">
+  <div class="section-header reveal" style="padding:0 24px">
+    <span class="section-tag">Depoimentos</span>
+    <h2 class="section-title">O que Nossos Usuarios Dizem</h2>
+  </div>
+  <div class="testimonials-grid">
+    <article class="testimonial-card reveal" style="animation-delay:0.1s">
+      <div class="testimonial-stars" aria-label="5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">"Perdi 8kg em 2 meses seguindo o plano personalizado. A gamificacao me manteve motivada. Amei as receitas detalhadas!"</p>
+      <div class="testimonial-author">
+        <div class="avatar">M</div>
+        <div>
+          <div class="testimonial-name">Marina S.</div>
+          <div class="testimonial-meta">Perdeu 8kg &#183; Emagrecimento</div>
+        </div>
+      </div>
+    </article>
+    <article class="testimonial-card reveal" style="animation-delay:0.15s">
+      <div class="testimonial-stars" aria-label="5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">"O melhor app de nutricao que usei. Os graficos de progresso sao incriveis e o planejador semanal me poupou muito tempo."</p>
+      <div class="testimonial-author">
+        <div class="avatar">R</div>
+        <div>
+          <div class="testimonial-name">Rafael M.</div>
+          <div class="testimonial-meta">Ganhou 4kg de massa &#183; Hipertrofia</div>
+        </div>
+      </div>
+    </article>
+    <article class="testimonial-card reveal" style="animation-delay:0.2s">
+      <div class="testimonial-stars" aria-label="5 estrelas">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="testimonial-text">"Finalmente um app que funciona offline! Uso na academia sem internet e o tracking de exercicios calcula as calorias com precisao."</p>
+      <div class="testimonial-author">
+        <div class="avatar">A</div>
+        <div>
+          <div class="testimonial-name">Ana C.</div>
+          <div class="testimonial-meta">Mantencao &#183; Habitos saudaveis</div>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ======== CTA FINAL ======== -->
+<section class="cta-section">
+  <div class="container" style="position:relative;z-index:1">
+    <h2 class="reveal">Pronto para Transformar Seu Corpo?</h2>
+    <p class="reveal">Comece hoje. 7 dias gratis. Sem cartao. Sem promessas vazias.</p>
+    <button class="btn-cta reveal" id="cta-btn-register" aria-label="Comecar agora gratis">
+      <span>&#127807;</span> Comecar Agora — Gratis
+    </button>
+  </div>
+</section>
+
+<!-- ======== FOOTER ======== -->
+<footer class="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">&#127807;</div>
+        <div class="logo-text">Kelly<span>Fit</span></div>
+      </a>
+      <p>O app de nutricao e fitness mais completo do Brasil. Ciencia, tecnologia e gamificacao a servico da sua saude.</p>
+    </div>
+    <div class="footer-col">
+      <h4>App</h4>
+      <ul>
+        <li><a href="#features">Funcionalidades</a></li>
+        <li><a href="#preco">Trial Gratis</a></li>
+        <li><a href="#comparativo">Comparativo</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Suporte</h4>
+      <ul>
+        <li><a href="#" id="footer-login-link">Fazer Login</a></li>
+        <li><a href="#" id="footer-register-link">Criar Conta</a></li>
+        <li><a href="quiz.html">Fazer Quiz</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 KellyFit Padrao 2026. Feito com &#10084; no Brasil.</p>
+  </div>
+</footer>
+
+<!-- ======== AUTH MODAL ======== -->
+<div class="auth-overlay" id="auth-overlay" role="dialog" aria-modal="true" aria-label="Autenticacao">
+  <div class="auth-modal">
+    <button class="auth-modal-close" id="auth-modal-close" aria-label="Fechar">&#10005;</button>
+    <div class="auth-logo">
+      <div class="logo-icon-lg" aria-hidden="true">&#127807;</div>
+      <h2>KellyFit 2026</h2>
+      <p id="auth-modal-subtitle">Comece sua transformacao</p>
+    </div>
+    <div class="auth-tabs" role="tablist">
+      <button class="auth-tab active" id="tab-register" role="tab" aria-selected="true" aria-controls="form-register">Criar Conta</button>
+      <button class="auth-tab" id="tab-login" role="tab" aria-selected="false" aria-controls="form-login">Entrar</button>
+    </div>
+
+    <!-- Register Form -->
+    <form class="auth-form active" id="form-register" aria-labelledby="tab-register" novalidate>
+      <div class="input-group">
+        <label for="reg-name">Seu Nome</label>
+        <input class="input" type="text" id="reg-name" name="name" placeholder="Como voce quer ser chamado?" autocomplete="given-name" required maxlength="60">
+      </div>
+      <div class="input-group">
+        <label for="reg-email">Email</label>
+        <input class="input" type="email" id="reg-email" name="email" placeholder="seu@email.com" autocomplete="email" required>
+      </div>
+      <div class="input-group">
+        <label for="reg-password">Senha</label>
+        <input class="input" type="password" id="reg-password" name="password" placeholder="Minimo 6 caracteres" autocomplete="new-password" required minlength="6">
+      </div>
+      <div id="register-error" class="badge badge-error" style="display:none;width:100%;margin-bottom:12px"></div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">
+        Criar Conta e Comecar Trial <span aria-hidden="true">&#8594;</span>
+      </button>
+      <p class="auth-footer">Ao criar conta, voce concorda com os termos de uso.</p>
+    </form>
+
+    <!-- Login Form -->
+    <form class="auth-form" id="form-login" aria-labelledby="tab-login" novalidate>
+      <div class="input-group">
+        <label for="login-email">Email</label>
+        <input class="input" type="email" id="login-email" name="email" placeholder="seu@email.com" autocomplete="email" required>
+      </div>
+      <div class="input-group">
+        <label for="login-password">Senha</label>
+        <input class="input" type="password" id="login-password" name="password" placeholder="Sua senha" autocomplete="current-password" required>
+      </div>
+      <div id="login-error" class="badge badge-error" style="display:none;width:100%;margin-bottom:12px"></div>
+      <button type="submit" class="btn btn-primary btn-lg btn-block">
+        Entrar <span aria-hidden="true">&#8594;</span>
+      </button>
+      <p class="auth-footer">Nao tem conta? <a id="switch-to-register">Criar gratis</a></p>
+    </form>
+  </div>
+</div>
+
+<!-- Scripts (ordem importa: utils → core → ui → landing) -->
+<script src="js/utils/hash.js"></script>
+<script src="js/utils/date-utils.js"></script>
+<script src="js/utils/nutrition-calc.js"></script>
+<script src="js/core/events.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/auth.js"></script>
+<script src="js/ui/theme.js"></script>
+<script src="js/ui/toast.js"></script>
+<script src="js/ui/modal.js"></script>
+<script src="js/ui/particles.js"></script>
+<script src="js/ui/landing.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./service-worker.js')
+        .catch(function (err) { console.warn('[SW] Registration failed:', err); });
+    });
+  }
+</script>
+</body>
+</html>

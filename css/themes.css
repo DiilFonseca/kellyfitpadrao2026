@@ -1,0 +1,38 @@
+/* ============================================================
+   KellyFit Padrao 2026 — Dark / Light Themes
+   ============================================================ */
+
+/* Dark Theme (default) */
+[data-theme="dark"], :root {
+  --bg-primary: #0F172A;
+  --bg-secondary: #111827;
+  --bg-card: #1E293B;
+  --bg-card-hover: #334155;
+  --bg-input: #334155;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --border-color: #334155;
+  --border-light: #475569;
+  --overlay-bg: rgba(0, 0, 0, 0.7);
+}
+
+/* Light Theme */
+[data-theme="light"] {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #FFFFFF;
+  --bg-card: #FFFFFF;
+  --bg-card-hover: #F1F5F9;
+  --bg-input: #F1F5F9;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #94A3B8;
+  --border-color: #E2E8F0;
+  --border-light: #CBD5E1;
+  --overlay-bg: rgba(0, 0, 0, 0.5);
+}
+
+/* Theme transition */
+body, .card, .sidebar, .navbar, .modal, input, button {
+  transition: background-color var(--tr-base), color var(--tr-base), border-color var(--tr-base);
+}

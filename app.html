@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KellyFit Padrao 2026 — Dashboard pessoal de nutricao e fitness.">
+  <meta name="theme-color" content="#10B981">
+  <title>Dashboard — KellyFit Padrao 2026</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/charts.css">
+</head>
+<body>
+<div class="app-layout" id="app-layout">
+
+  <!-- Topbar -->
+  <header class="app-topbar" role="banner">
+    <div class="topbar-left">
+      <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Abrir menu" aria-expanded="false">&#9776;</button>
+      <a href="index.html" class="topbar-logo" aria-label="KellyFit Home">
+        <span aria-hidden="true">&#127807;</span> Kelly<span class="logo-dot">Fit</span>
+      </a>
+    </div>
+    <div class="topbar-right">
+      <div class="topbar-trial-badge" id="trial-badge" aria-live="polite">
+        <span aria-hidden="true">&#8987;</span> <span id="trial-days-left">7</span> dias restantes
+      </div>
+      <button class="theme-toggle btn-ghost btn-icon" aria-label="Alternar tema">
+        <span class="theme-icon-light" aria-hidden="true">&#9728;</span>
+        <span class="theme-icon-dark" aria-hidden="true">&#9790;</span>
+      </button>
+      <button class="topbar-user-btn" id="topbar-user-btn" aria-label="Menu do usuario">
+        <div class="avatar avatar-sm" id="topbar-avatar">?</div>
+        <span class="topbar-user-name" id="topbar-user-name">Carregando...</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Sidebar -->
+  <nav class="app-sidebar" id="app-sidebar" aria-label="Menu principal">
+    <span class="sidebar-section-label">Principal</span>
+    <button class="nav-item active" data-route="dashboard">
+      <span class="nav-icon" aria-hidden="true">&#127968;</span> Dashboard
+    </button>
+    <button class="nav-item" data-route="cardapio">
+      <span class="nav-icon" aria-hidden="true">&#127869;</span> Cardapio de Hoje
+    </button>
+    <button class="nav-item" data-route="planejador">
+      <span class="nav-icon" aria-hidden="true">&#128197;</span> Planejador Semanal
+    </button>
+
+    <span class="sidebar-section-label">Tracking</span>
+    <button class="nav-item" data-route="agua">
+      <span class="nav-icon" aria-hidden="true">&#128167;</span> Agua
+    </button>
+    <button class="nav-item" data-route="exercicios">
+      <span class="nav-icon" aria-hidden="true">&#127947;</span> Exercicios
+    </button>
+    <button class="nav-item" data-route="habitos">
+      <span class="nav-icon" aria-hidden="true">&#9989;</span> Habitos
+    </button>
+
+    <span class="sidebar-section-label">Analise</span>
+    <button class="nav-item" data-route="progresso">
+      <span class="nav-icon" aria-hidden="true">&#128200;</span> Progresso
+    </button>
+    <button class="nav-item" data-route="analytics">
+      <span class="nav-icon" aria-hidden="true">&#128202;</span> Analytics
+    </button>
+    <button class="nav-item" data-route="imc">
+      <span class="nav-icon" aria-hidden="true">&#9878;</span> IMC
+    </button>
+
+    <span class="sidebar-section-label">Extra</span>
+    <button class="nav-item" data-route="compras">
+      <span class="nav-icon" aria-hidden="true">&#128722;</span> Lista de Compras
+    </button>
+    <button class="nav-item" data-route="conquistas">
+      <span class="nav-icon" aria-hidden="true">&#127942;</span> Conquistas
+    </button>
+    <button class="nav-item" data-route="perfil">
+      <span class="nav-icon" aria-hidden="true">&#128100;</span> Meu Perfil
+    </button>
+
+    <div style="margin-top:auto;padding-top:16px;border-top:1px solid var(--border-color);padding-bottom:4px">
+      <button class="nav-item" id="btn-logout">
+        <span class="nav-icon" aria-hidden="true">&#128682;</span> Sair
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main content -->
+  <main class="app-main" id="app-main" aria-label="Conteudo principal">
+
+    <!-- Dashboard -->
+    <section id="page-dashboard" role="region" aria-label="Dashboard">
+      <div class="page-header">
+        <div>
+          <h1 class="page-title" id="dashboard-greeting">Bom dia! &#128075;</h1>
+          <p class="page-subtitle" id="dashboard-date"></p>
+        </div>
+        <button class="btn btn-primary btn-sm" id="btn-log-weight" aria-label="Registrar peso">
+          &#9878; Registrar Peso
+        </button>
+      </div>
+
+      <!-- XP Bar -->
+      <div class="xp-section" id="xp-section" aria-label="Nivel e XP">
+        <div class="xp-level-badge" id="xp-level-badge">
+          <span id="xp-level-num">1</span>
+          <span class="xp-level-label">LVL</span>
+        </div>
+        <div class="xp-info">
+          <div class="xp-title" id="xp-title">Iniciante Fitness</div>
+          <div class="progress-bar xp-bar-wrap">
+            <div class="progress-bar-fill" id="xp-bar-fill" style="width:0%"></div>
+          </div>
+          <div class="xp-bar-text" id="xp-bar-text">0 / 100 XP</div>
+        </div>
+        <div class="xp-streak" aria-label="Sequencia de dias">
+          <div class="xp-streak-num" id="streak-num">0</div>
+          <div class="xp-streak-label">&#128293; streak</div>
+        </div>
+      </div>
+
+      <!-- Summary Cards -->
+      <div class="dashboard-grid" id="summary-cards" aria-label="Resumo de hoje"></div>
+
+      <!-- Macros + Agua -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:24px">
+        <div class="card" id="macros-card" aria-label="Macronutrientes de hoje">
+          <div class="card-header"><h3 style="font-size:1rem">Macros de Hoje</h3></div>
+          <div class="macros-ring-wrap" id="macros-ring-wrap"></div>
+        </div>
+        <div class="card" id="quick-water-card" aria-label="Agua rapida">
+          <div class="card-header">
+            <h3 style="font-size:1rem">&#128167; Agua</h3>
+            <span id="water-quick-label" style="font-weight:700;color:var(--info)">0L</span>
+          </div>
+          <div class="water-cups-grid" id="water-quick-cups"></div>
+        </div>
+      </div>
+
+      <!-- Today's meals quick view -->
+      <div class="meals-today-section" aria-label="Refeicoes de hoje">
+        <div class="card-header"><h3>Refeicoes de Hoje</h3><button class="btn btn-ghost btn-sm" id="btn-go-cardapio">Ver todas</button></div>
+        <div id="today-meals-preview"></div>
+      </div>
+
+      <!-- Recent badges -->
+      <div class="card" aria-label="Conquistas recentes">
+        <div class="card-header"><h3>Conquistas Recentes</h3><button class="btn btn-ghost btn-sm" id="btn-go-conquistas">Ver todas</button></div>
+        <div class="badges-row" id="recent-badges"></div>
+      </div>
+    </section>
+
+    <!-- Cardapio -->
+    <section id="page-cardapio" style="display:none" role="region" aria-label="Cardapio de hoje"></section>
+
+    <!-- Planejador -->
+    <section id="page-planejador" style="display:none" role="region" aria-label="Planejador semanal"></section>
+
+    <!-- Agua -->
+    <section id="page-agua" style="display:none" role="region" aria-label="Tracking de agua"></section>
+
+    <!-- Exercicios -->
+    <section id="page-exercicios" style="display:none" role="region" aria-label="Exercicios"></section>
+
+    <!-- Habitos -->
+    <section id="page-habitos" style="display:none" role="region" aria-label="Habitos diarios"></section>
+
+    <!-- Progresso -->
+    <section id="page-progresso" style="display:none" role="region" aria-label="Graficos de progresso"></section>
+
+    <!-- Analytics -->
+    <section id="page-analytics" style="display:none" role="region" aria-label="Analytics e tendencias"></section>
+
+    <!-- IMC -->
+    <section id="page-imc" style="display:none" role="region" aria-label="Calculadora de IMC"></section>
+
+    <!-- Compras -->
+    <section id="page-compras" style="display:none" role="region" aria-label="Lista de compras"></section>
+
+    <!-- Conquistas -->
+    <section id="page-conquistas" style="display:none" role="region" aria-label="Conquistas e badges"></section>
+
+    <!-- Perfil -->
+    <section id="page-perfil" style="display:none" role="region" aria-label="Meu perfil"></section>
+
+  </main>
+</div>
+
+<!-- Trial Expired Overlay (hidden initially) -->
+<div class="trial-expired-overlay" id="trial-expired-overlay" style="display:none" role="alertdialog" aria-modal="true" aria-label="Trial expirado">
+  <div class="trial-expired-card">
+    <div class="trial-expired-icon" aria-hidden="true">&#9200;</div>
+    <h2 class="trial-expired-title">Seu Trial Expirou</h2>
+    <p class="trial-expired-desc">Seus 7 dias de acesso gratuito chegaram ao fim. Para continuar usando o KellyFit Padrao 2026, por favor renove seu acesso.</p>
+    <button class="btn btn-primary btn-lg btn-block" onclick="window.location.href='index.html'" style="margin-bottom:12px">Renovar Acesso</button>
+    <button class="btn btn-ghost btn-block" onclick="Auth.logout();window.location.href='index.html'">Sair</button>
+  </div>
+</div>
+
+<!-- Scripts (order matters: utils → core → data → features → ui) -->
+<script src="js/utils/hash.js"></script>
+<script src="js/utils/date-utils.js"></script>
+<script src="js/utils/nutrition-calc.js"></script>
+<script src="js/core/events.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/auth.js"></script>
+<script src="js/core/router.js"></script>
+<script src="js/ui/theme.js"></script>
+<script src="js/ui/toast.js"></script>
+<script src="js/ui/modal.js"></script>
+<script src="js/data/meals-db.js"></script>
+<script src="js/data/exercises-db.js"></script>
+<script src="js/data/badges-db.js"></script>
+<script src="js/data/tips-db.js"></script>
+<script src="js/ui/charts.js"></script>
+<script src="js/features/dashboard.js"></script>
+<script src="js/features/meal-planner.js"></script>
+<script src="js/features/meal-detail.js"></script>
+<script src="js/features/water-tracker.js"></script>
+<script src="js/features/exercise-tracker.js"></script>
+<script src="js/features/habits.js"></script>
+<script src="js/features/progress.js"></script>
+<script src="js/features/analytics.js"></script>
+<script src="js/features/bmi-calculator.js"></script>
+<script src="js/features/shopping-list.js"></script>
+<script src="js/features/gamification.js"></script>
+<script src="js/features/profile.js"></script>
+<script src="js/features/onboarding.js"></script>
+<script src="js/utils/export.js"></script>
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', function () {
+      navigator.serviceWorker.register('./service-worker.js')
+        .then(function (reg) { console.log('[SW] Registered:', reg.scope); })
+        .catch(function (err) { console.warn('[SW] Registration failed:', err); });
+    });
+  }
+</script>
+</body>
+</html>

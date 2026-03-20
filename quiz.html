@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="KellyFit — Quiz personalizado de 20 perguntas para calcular seu plano nutricional ideal.">
+  <title>Quiz Personalizado — KellyFit Padrao 2026</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/themes.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/quiz.css">
+</head>
+<body class="quiz-page">
+
+<header class="quiz-header">
+  <a href="index.html" class="quiz-header-logo" aria-label="Voltar para home">
+    <span style="font-size:1.4rem" aria-hidden="true">&#127807;</span>
+    <span>KellyFit</span>
+  </a>
+  <div class="quiz-step-counter" id="quiz-step-counter" aria-live="polite">Pergunta 1 de 20</div>
+  <button class="theme-toggle btn-ghost btn-icon" aria-label="Alternar tema">
+    <span class="theme-icon-light" aria-hidden="true">&#9728;</span>
+    <span class="theme-icon-dark" aria-hidden="true">&#9790;</span>
+  </button>
+</header>
+
+<div class="quiz-progress-wrap">
+  <div class="quiz-progress-bar" role="progressbar" aria-valuenow="5" aria-valuemin="0" aria-valuemax="100" aria-label="Progresso do quiz">
+    <div class="quiz-progress-fill" id="quiz-progress-fill" style="width:5%"></div>
+  </div>
+  <div class="quiz-progress-label" id="quiz-progress-label">5%</div>
+</div>
+
+<main class="quiz-main">
+  <div class="quiz-container" id="quiz-container">
+    <!-- Question cards rendered by quiz.js -->
+  </div>
+</main>
+
+<script src="js/utils/hash.js"></script>
+<script src="js/utils/date-utils.js"></script>
+<script src="js/utils/nutrition-calc.js"></script>
+<script src="js/core/events.js"></script>
+<script src="js/core/store.js"></script>
+<script src="js/core/auth.js"></script>
+<script src="js/ui/theme.js"></script>
+<script src="js/ui/toast.js"></script>
+<script src="js/ui/modal.js"></script>
+<script src="js/features/quiz.js"></script>
+</body>
+</html>
