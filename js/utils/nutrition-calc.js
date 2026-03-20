@@ -13,11 +13,11 @@ const NutritionCalc = {
   // Fator de atividade
   getActivityFactor(level) {
     const factors = {
-      sedentario: 1.2,
-      leve: 1.375,
-      moderado: 1.55,
-      ativo: 1.725,
-      muito_ativo: 1.9
+      sedentario: 1.2,    sedentary: 1.2,
+      leve: 1.375,        light: 1.375,
+      moderado: 1.55,     moderate: 1.55,
+      ativo: 1.725,       active: 1.725,
+      muito_ativo: 1.9,   very_active: 1.9, extreme: 1.9
     };
     return factors[level] || 1.55;
   },
@@ -124,13 +124,15 @@ const NutritionCalc = {
 
   // Gerar plano completo a partir das respostas do quiz
   generatePlan(answers) {
-    const peso = answers.peso || 75;
-    const altura = answers.altura || 170;
-    const idade = answers.idade || 30;
-    const sexo = answers.sexo || 'M';
-    const atividade = answers.atividade || 'moderado';
-    const objetivo = answers.objetivo || 'emagrecer';
-    const pesoDesejado = answers.pesoDesejado || 68;
+    const goalMap = { loss: 'emagrecer', gain: 'ganhar', maintain: 'manter', health: 'saude' };
+    const peso = answers.peso || answers.weight || 75;
+    const altura = answers.altura || answers.height || 170;
+    const idade = answers.idade || answers.age || 30;
+    const sexo = answers.sexo || answers.gender || 'M';
+    const atividade = answers.atividade || answers.activity || 'moderado';
+    const goalRaw = answers.objetivo || answers.goal || 'emagrecer';
+    const objetivo = goalMap[goalRaw] || goalRaw;
+    const pesoDesejado = answers.pesoDesejado || answers.targetWeight || 68;
 
     const tmb = Math.round(this.calcTMB(peso, altura, idade, sexo));
     const tdee = this.calcTDEE(tmb, atividade);
@@ -143,11 +145,12 @@ const NutritionCalc = {
     const projection = this.calcProjection(peso, pesoDesejado, objetivo);
 
     return {
-      tmb, tdee, calorias,
-      proteina: macros.proteina,
+      tmb, tdee,
+      calories: calorias,
+      protein: macros.proteina,
       carbs: macros.carbs,
-      gordura: macros.gordura,
-      fibra: macros.fibra,
+      fat: macros.gordura,
+      fiber: macros.fibra,
       waterCups,
       imc, bodyFat, idealWeight,
       projecao: projection

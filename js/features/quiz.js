@@ -599,7 +599,6 @@
 
       var imc = NutritionCalc.calcIMC(answers.weight || 70, answers.height || 170);
       var imcClass = NutritionCalc.classifyIMC(imc);
-      var daysToGoal = NutritionCalc.calcProjection(answers.weight || 70, answers.target_weight || answers.weight || 70, plan.calories);
 
       var html = '<div class="quiz-results">';
       html += '<div class="results-icon">&#127881;</div>';
@@ -608,10 +607,10 @@
 
       html += '<div class="results-grid">';
       html += '<div class="result-stat"><div class="result-stat-value">' + plan.calories + '</div><div class="result-stat-label">kcal / dia</div></div>';
-      html += '<div class="result-stat"><div class="result-stat-value">' + imc.toFixed(1) + '</div><div class="result-stat-label">IMC (' + imcClass + ')</div></div>';
-      html += '<div class="result-stat"><div class="result-stat-value">' + plan.water + 'L</div><div class="result-stat-label">Agua / dia</div></div>';
-      if (daysToGoal > 0 && daysToGoal < 999) {
-        html += '<div class="result-stat"><div class="result-stat-value">' + daysToGoal + 'd</div><div class="result-stat-label">Estimativa para meta</div></div>';
+      html += '<div class="result-stat"><div class="result-stat-value">' + imc.toFixed(1) + '</div><div class="result-stat-label">IMC (' + imcClass.label + ')</div></div>';
+      html += '<div class="result-stat"><div class="result-stat-value">' + ((plan.waterCups || 8) * 0.25).toFixed(1) + 'L</div><div class="result-stat-label">Agua / dia</div></div>';
+      if (plan.projecao && plan.projecao.weeks > 0 && plan.projecao.weeks < 200) {
+        html += '<div class="result-stat"><div class="result-stat-value">' + plan.projecao.weeks + ' sem</div><div class="result-stat-label">Estimativa para meta</div></div>';
       }
       html += '</div>';
 

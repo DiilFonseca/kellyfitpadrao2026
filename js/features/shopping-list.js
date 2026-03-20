@@ -28,7 +28,7 @@ const ShoppingList = {
       Store.set('shopping_list', list);
       ShoppingList.render();
       Toast.success('Lista gerada com ' + list.length + ' itens!');
-      Gamification.awardBadge('b027');
+      Gamification.awardBadge('b030');
     }
 
     var btn = document.getElementById('btn-gen-list');

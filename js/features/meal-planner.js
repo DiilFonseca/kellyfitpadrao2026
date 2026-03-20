@@ -43,7 +43,7 @@ const MealPlanner = {
         '<div class="card-header"><h3>' + MealsDB.getCategoryLabel(cat) + '</h3><span class="badge badge-info">' + catMeals.length + ' opcoes</span></div>' +
         '<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:12px">';
       catMeals.slice(0, 6).forEach(function (m) {
-        html += '<div class="card" style="padding:12px;cursor:pointer" data-meal-id="' + m.id + '" class="meal-card-item">' +
+        html += '<div class="card meal-card-item" style="padding:12px;cursor:pointer" data-meal-id="' + m.id + '">' +
           '<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">' +
           '<span style="font-size:1.4rem">' + m.emoji + '</span>' +
           '<div style="flex:1"><div style="font-weight:700;font-size:0.85rem">' + m.name + '</div>' +

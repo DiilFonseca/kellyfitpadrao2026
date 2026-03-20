@@ -8,12 +8,12 @@ const WaterTracker = {
 
     Auth.getCurrentUser().then(function (user) {
       var plan = user && user.nutritionPlan ? user.nutritionPlan : null;
-      var goalL = plan ? plan.water : 2.0;
-      var goalCups = Math.round(goalL / 0.25);
+      var goalCups = plan ? (plan.waterCups || 8) : 8;
+      var goalL = (goalCups * 0.25).toFixed(2);
       var today = DateUtils.today();
       var data = Store.get('water_' + today, { cups: 0 });
 
-      var html = '<div class="page-header"><div><h1 class="page-title">&#128167; Tracking de Agua</h1><p class="page-subtitle">Meta: ' + goalL.toFixed(2) + 'L / dia (' + goalCups + ' copos de 250ml)</p></div></div>';
+      var html = '<div class="page-header"><div><h1 class="page-title">&#128167; Tracking de Agua</h1><p class="page-subtitle">Meta: ' + goalL + 'L / dia (' + goalCups + ' copos de 250ml)</p></div></div>';
 
       // Big circle indicator
       var pct = Math.min(100, Math.round((data.cups / goalCups) * 100));
@@ -21,7 +21,7 @@ const WaterTracker = {
       html += '<div class="card" style="text-align:center;margin-bottom:20px">' +
         '<div style="display:flex;justify-content:center;margin-bottom:16px" id="water-radial"></div>' +
         '<div style="font-size:2rem;font-weight:900;color:var(--info)">' + currentL + 'L</div>' +
-        '<div style="color:var(--text-muted)">de ' + goalL.toFixed(2) + 'L</div>' +
+        '<div style="color:var(--text-muted)">de ' + goalL + 'L</div>' +
         '<div class="water-cups-grid" id="water-cups-main" style="justify-content:center;margin:16px 0"></div>' +
         '<div style="display:flex;gap:12px;justify-content:center;margin-top:16px">' +
         '<button class="btn btn-primary" id="water-add-btn">&#128167; + 1 Copo (250ml)</button>' +
