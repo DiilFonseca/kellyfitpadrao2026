@@ -94,7 +94,7 @@ const MealPlanner = {
     var container = document.getElementById('page-planejador');
     if (!container) return;
 
-    var weekDates = DateUtils.getWeekDates();
+    var weekDates = DateUtils.getWeekDates(DateUtils.getWeekKey());
     var html = '<div class="page-header"><div><h1 class="page-title">&#128197; Planejador Semanal</h1><p class="page-subtitle">Monte seu cardapio da semana completo</p></div>' +
       '<button class="btn btn-primary btn-sm" id="btn-gen-shopping">&#128722; Gerar Lista de Compras</button></div>';
 

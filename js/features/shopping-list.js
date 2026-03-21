@@ -109,9 +109,7 @@ const ShoppingList = {
     weekDays.forEach(processDay);
     days.forEach(processDay);
 
-    // Also add from current today meals
     var today = DateUtils2.today ? DateUtils2.today() : new Date().toISOString().split('T')[0];
-    processDay(today);
 
     // Sort by category then name
     var list = Object.values(ingredientMap);
